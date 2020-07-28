@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2020-07-09 15:59:33
- * @LastEditTime: 2020-07-28 17:28:08
+ * @LastEditTime: 2020-07-28 17:34:41
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \Algorithm\排序\quickSort.js
@@ -70,9 +70,22 @@ function quickSortArr(arr) {
         swap(arr, ++beginIndex, i)
       }
     }
+    swap(arr, left, beginIndex)
+    return beginIndex
   }
+
+  function sort(arr, left, right) {
+    if (left < right) {
+      let beginIndex = partition(arr, left, right)
+      sort(arr, left, beginIndex - 1)
+      sort(arr, beginIndex + 1, right)
+    }
+  }
+
+  sort(arr, 0, arr.length - 1)
+  return arr
 }
 
 
 
-console.log(quickSort2([12, 4, 23, 53, 27, 85, 34, 36, 72], 0, 8));
+console.log(quickSortArr([12, 4, 23, 53, 27, 85, 34, 36, 72]));
