@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2020-08-03 09:28:39
- * @LastEditTime: 2020-08-03 10:15:15
+ * @LastEditTime: 2020-08-03 10:21:13
  * @LastEditors: Please set LastEditors
  * @Description: 给定一个二叉树和一个目标和，找到所有从根节点到叶子节点路径总和等于给定目标和的路径。
                  说明: 叶子节点是指没有子节点的节点。
@@ -29,6 +29,7 @@ var pathSum = function (root, sum) {
 
   let stack = [[[root.val], root]],
     res = [];
+    
   while (stack.length !== 0) {
     let [tmp, node] = stack.pop();
     if (node.left == null && node.right == null && Sum(tmp) == sum) {
