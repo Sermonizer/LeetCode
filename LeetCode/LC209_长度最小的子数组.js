@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2020-07-01 10:22:23
- * @LastEditTime: 2020-07-01 10:52:34
+ * @LastEditTime: 2020-08-06 11:25:18
  * @LastEditors: Please set LastEditors
  * @Description: 给定一个含有 n 个正整数的数组和一个正整数 s ，
  *               找出该数组中满足其和 ≥ s 的长度最小的连续子数组，
@@ -12,7 +12,7 @@
  * @FilePath: \Algorithm\LC209_长度最小的子数组.js
  */
 
-var minSubArrayLen = function (s, nums) {
+var minSubArrayLen1 = function (s, nums) {
   let head = 0,
     tail = 0,
     len = Number.MAX_SAFE_INTEGER,
@@ -27,4 +27,20 @@ var minSubArrayLen = function (s, nums) {
   return len === Number.MAX_SAFE_INTEGER ? 0 : len;
 };
 
-minSubArrayLen(15, [15, 10, 3, 5, 1, 7, 4, 9, 2, 8]);
+var minSubArrayLen2 = function(s, nums) {
+  let start = 0, len = Infinity, sum = 0
+  for (let i = 0; i < nums.length; i++) {
+      sum += nums[i]
+      if (sum >= s) {
+          for (let j = start; j <= i; j++) {
+              sum -= nums[j]
+              len = (i - start + 1) < len ? (i - start + 1) : len
+              start++
+              if (sum < s) break
+          }
+      }
+  }
+  return len
+};
+
+console.log(minSubArrayLen2(4, [1,4,4]));
