@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2020-08-07 10:47:03
- * @LastEditTime: 2020-08-07 11:41:18
+ * @LastEditTime: 2020-08-07 11:50:41
  * @LastEditors: Please set LastEditors
  * @Description: 给定一个链表，删除链表的倒数第 n 个节点，并且返回链表的头结点。
  * @FilePath: \LeetCode\LeetCode\LC19_删除链表的倒数第N个节点.js
@@ -63,7 +63,7 @@ var removeNthFromEnd3 = function(head, n) {
     }
 };
 
-// 递归2 ?
+// 递归2
 let num = 0
 var removeNthFromEnd4 = function(head, n) {
     if(!head) return null
@@ -71,14 +71,16 @@ var removeNthFromEnd4 = function(head, n) {
     return ++num == n ? head.next : head
 };
 
-let a1 = new ListNode(1)
-let a2 = new ListNode(2)
-let a3 = new ListNode(3)
-let a4 = new ListNode(4)
-let a5 = new ListNode(5)
-a1.next = a2
-a2.next = a3
-a3.next = a4
-a4.next = a5
+let a = new ListNode(1)
 
-console.log(removeNthFromEnd(a1, 2));
+// let a1 = new ListNode(1)
+// let a2 = new ListNode(2)
+// let a3 = new ListNode(3)
+// let a4 = new ListNode(4)
+// let a5 = new ListNode(5)
+// a1.next = a2
+// a2.next = a3
+// a3.next = a4
+// a4.next = a5
+
+console.log(removeNthFromEnd4(a, 1));
