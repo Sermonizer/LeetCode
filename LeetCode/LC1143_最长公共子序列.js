@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2020-08-06 22:42:36
- * @LastEditTime: 2020-08-06 22:50:06
+ * @LastEditTime: 2020-08-07 09:32:36
  * @LastEditors: Please set LastEditors
  * @Description: 
  * 给定两个字符串 text1 和 text2，返回这两个字符串的最长公共子序列的长度。
@@ -13,14 +13,10 @@
  * @FilePath: \LeetCode\LeetCode\LC1143_最长公共子序列.js
  */
 var longestCommonSubsequence = function(text1, text2) {
-    let len1 = text1.length, len2 = text2.length, dp = []
-    // 构建 DP table 和 base case
-    for (let i = 0; i <= len1; i++) {
-        dp[i] = []
-        for (let j = 0; j <= len2; j++) {
-            dp[i][j] = 0
-        }
-    }
+    let len1 = text1.length, len2 = text2.length
+    // 构建 DP table 和 base case  
+    // JS创建二维数组的优化方法
+    let dp = Array.from(new Array(len1 + 1), () => new Array(len2+1).fill(0))
     // 进行状态转移
     for (let i = 1; i <=len1; i++) {
         for (let j = 1; j <=len2; j++) {
