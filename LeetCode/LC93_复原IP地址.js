@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2020-07-01 11:04:11
- * @LastEditTime: 2020-08-07 12:50:39
+ * @LastEditTime: 2020-08-07 14:05:09
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \Algorithm\LC93_复原IP地址.js
@@ -28,8 +28,9 @@ var restoreIpAddresses = function(s) {
             return 
         } else {
             if (segment.length > 4) return
+            // 判断IP地址
             for (let i = start; i < s.length && i < start + 3; i++) {
-                let str = s.subString(start, i + 1)
+                let str = s.substring(start, i + 1)
                 if (str[0] == "0" && str.length > 1) break
                 let num = +str
                 if (num >= 0 && num <= 255) {
@@ -43,3 +44,5 @@ var restoreIpAddresses = function(s) {
         }
     }
 };
+
+console.log(restoreIpAddresses("25525511135"));
