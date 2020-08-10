@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2020-08-09 10:57:46
- * @LastEditTime: 2020-08-09 11:19:37
+ * @LastEditTime: 2020-08-10 09:50:38
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \LeetCode\LeetCode\LC98_验证二叉搜索树.js
@@ -27,7 +27,7 @@ var isValidBST1 = function (root) {
     return isValidBST1(root.right)
 };
 
-
+// 本质上就是中序遍历能够获取到有序的数组，然后判断数组是不是严格上升
 var isValidBST = function (root) {
   let stack = [root];
   while (stack.length) {

@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2020-07-05 10:55:31
- * @LastEditTime: 2020-07-05 10:57:10
+ * @LastEditTime: 2020-08-10 10:12:18
  * @LastEditors: Please set LastEditors
  * @Description: 给你一个二叉树，请你返回其按 层序遍历 得到的节点值（即逐层地，从左到右访问所有节点）
  * 
@@ -29,4 +29,20 @@ var levelOrder = function(root) {
         res.push(list)
     }
     return res
+};
+
+// 前序遍历，每遍历深一层，depth+1
+var levelOrder = function(root) {
+    let res = []
+    preOrder(root, 0, res)
+    return res
+    function preOrder(root, depth, res) {
+        if (root == null) return
+        if (depth >= res.length) {
+            res.push([])
+        }
+        res[depth].push(root.val)
+        preOrder(root.left, depth+1, res)
+        preOrder(root.right, depth+1, res)
+    }
 };

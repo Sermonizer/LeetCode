@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2020-07-24 16:52:22
- * @LastEditTime: 2020-07-24 17:31:59
+ * @LastEditTime: 2020-08-10 11:03:04
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \Algorithm\LC105_前序和中序遍历二叉树.js
@@ -31,4 +31,18 @@ var buildTree = function (preorder, inorder) {
         root.right = buildTree(preorder, p_start + left + 1, p_end, inorder, i_root_index + 1, i_end)
         return root
     }
+};
+
+// 法2 慢、内存占用高
+var buildTree = function(preorder, inorder) {
+  if (preorder.length == 0 || inorder.length == 0) return null
+  let root = new TreeNode(preorder[0])
+  for (let i = 0; i < preorder.length; i++) {
+      if (preorder[0] == inorder[i]) {
+          root.left = buildTree(preorder.slice(1, i+1), inorder.slice(0, i))
+          root.right = buildTree(preorder.slice(i+1, preorder.length), inorder.slice(i+1, inorder.length))
+          break
+      }
+  }
+  return root
 };
