@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2020-07-24 16:52:22
- * @LastEditTime: 2020-08-10 11:03:04
+ * @LastEditTime: 2020-08-10 11:11:41
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \Algorithm\LC105_前序和中序遍历二叉树.js
@@ -19,7 +19,6 @@ function TreeNode(val) {
 
 var buildTree = function (preorder, inorder) {
     return buildTree(preorder, 0, preorder.length, inorder, 0, inorder.length)
-
     function buildTree(preorder, p_start, p_end, inorder, i_start, i_end) {
         // 如果preorder为空，返回null
         if (p_start === p_end) return null
@@ -33,7 +32,7 @@ var buildTree = function (preorder, inorder) {
     }
 };
 
-// 法2 慢、内存占用高
+// 法2 缺点：慢、内存占用高
 var buildTree = function(preorder, inorder) {
   if (preorder.length == 0 || inorder.length == 0) return null
   let root = new TreeNode(preorder[0])
