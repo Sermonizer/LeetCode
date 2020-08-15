@@ -1,13 +1,14 @@
 /*
  * @Author: your name
  * @Date: 2020-08-15 11:23:36
- * @LastEditTime: 2020-08-15 11:54:24
+ * @LastEditTime: 2020-08-15 14:21:58
  * @LastEditors: Please set LastEditors
- * @Description: In User Settings Edit
+ * @Description: 给定不同面额的硬币 coins 和一个总金额 amount。
+ * 编写一个函数来计算可以凑成总金额所需的最少的硬币个数。如果没有任何一种硬币组合能组成总金额，返回 -1。
  * @FilePath: \LeetCode\LeetCode\LC322_零钱兑换.js
  */
 
-// 未剪枝的dfs，会超时
+// 1. 未剪枝的dfs，会超时
 var coinChange1 = function(coins, amount) {
     return dfs(amount)
     function dfs(count) {
