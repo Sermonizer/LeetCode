@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2020-07-03 09:48:34
- * @LastEditTime: 2020-08-12 10:58:24
+ * @LastEditTime: 2020-08-16 20:06:49
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \Algorithm\求根节点到字节点的数字之和.js
@@ -59,8 +59,3 @@ var sumNumbers2 = function(root) {
 let a = new TreeNode(1)
 let b = new TreeNode(2)
 let c = new TreeNode(3)
-
-a.left = b
-a.right = c
-
-console.log(sumNumbers(a));
