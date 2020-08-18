@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2020-08-18 16:57:13
- * @LastEditTime: 2020-08-18 17:53:51
+ * @LastEditTime: 2020-08-18 18:01:08
  * @LastEditors: Please set LastEditors
  * @Description: 冒泡排序
  * @FilePath: \LeetCode\基本算法\排序\bubbleSort.js
@@ -32,6 +32,7 @@ function bubbleSort2(arr) {
                 arr[j + 1] = temp;
             }
         }
+        // 每次将最大值放到最后，下次遍历时就不遍历这个位置了，减少不必要的遍历次数
         i = pos;
     }
     console.log(arr);
