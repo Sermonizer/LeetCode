@@ -1,14 +1,14 @@
 /*
  * @Author: your name
  * @Date: 2020-08-13 10:18:53
- * @LastEditTime: 2020-08-13 10:20:27
+ * @LastEditTime: 2020-08-20 10:40:04
  * @LastEditors: Please set LastEditors
- * @Description: In User Settings Edit
+ * @Description: 给定一个字符串 s，找到 s 中最长的回文子串。你可以假设 s 的最大长度为 1000
  * @FilePath: \LeetCode\LeetCode\LC5_最长回文子串.js
  */
 
 // 1. 动态规划
-var longestPalindrome = function(s) {
+var longestPalindrome1 = function(s) {
     let dp = [], len = s.length, maxLen = 1, begin = 0
     if (len < 2) return s
     for (let i = 0; i < len; i++) {
@@ -33,3 +33,28 @@ var longestPalindrome = function(s) {
     }
     return s.slice(begin, (maxLen + begin))
 };
+
+// 中心扩散法
+var longestPalindrome2 = function(s) {
+    if (s.length < 2) return s
+    let maxLen = 1, res = s.slice(0, 1)
+    let huiwen = (s, left, right) => {
+        while (left >= 0 && right < s.length && s[left] === s[right]) {
+            left--;
+            right++;
+        }
+        return s.slice(left+1, right)
+    }
+    for (let i = 0; i < s.length - 1; i++) {
+        let res1 = huiwen(s, i, i), // 奇数中心
+        res2 = huiwen(s, i, i+1); // 偶数中心
+        let maxRes = res1.length > res2.length ? res1 : res2
+        if (maxRes.length > maxLen) {
+            maxLen = maxRes.length
+            res = maxRes
+        }
+    }
+    return res
+};
+
+console.log(longestPalindrome2("cbbd"));
