@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2020-08-22 11:32:17
- * @LastEditTime: 2020-08-26 22:44:07
+ * @LastEditTime: 2020-08-28 15:16:53
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \test.js
@@ -55,3 +55,20 @@ function getSum(root, sum) {
  }
 
  console.log(maxMoney([1,2,3,3])); //12
+
+ function likeNum(n) {
+   let num = [2, 3, 5]
+   for  (let i = 3; i < n; i++) {
+     if (i % 3 == 0) {
+       num[i] = num[Math.floor(i / 3) - 1] * 10 + 2
+     } else if (i % 3 == 1) {
+      num[i] = num[Math.floor(i / 3) - 1] * 10 + 3
+     } else {
+      num[i] = num[Math.floor(i / 3) - 1] * 10 + 5
+     }
+   }
+   return num[n-1]
+ }
+
+ console.log(likeNum(3));
+ console.log('%s', "value")
