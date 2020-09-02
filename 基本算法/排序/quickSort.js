@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2020-07-09 15:59:33
- * @LastEditTime: 2020-09-02 17:26:49
+ * @LastEditTime: 2020-09-02 17:54:31
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \Algorithm\排序\quickSort.js
@@ -88,4 +88,4 @@ function quickSortArr(arr) {
 
 
 
-console.log(quickSort2([12, 4, 23, 53, 4, 27, 85, 34, 36, 72], 0, 9));
+console.log(quickSort([12, 4, 23, 53, 4, 27, 85, 34, 36, 72], 0, 9));
