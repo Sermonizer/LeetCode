@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2020-07-09 15:59:33
- * @LastEditTime: 2020-07-28 17:34:41
+ * @LastEditTime: 2020-09-02 17:26:49
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \Algorithm\排序\quickSort.js
@@ -26,8 +26,8 @@ function quickSort1(arr) {
 // 实现2
 function quickSort2(arr, left, right) {
   let i = left,
-    j = right,
-    pivot = arr[Math.floor((left + right) / 2)];
+      j = right,
+      pivot = arr[Math.floor((left + right) / 2)];
   while (i <= j) {
     while (pivot > arr[i]) {
       i++;
@@ -88,4 +88,4 @@ function quickSortArr(arr) {
 
 
 
-console.log(quickSortArr([12, 4, 23, 53, 27, 85, 34, 36, 72]));
+console.log(quickSort2([12, 4, 23, 53, 4, 27, 85, 34, 36, 72], 0, 9));
