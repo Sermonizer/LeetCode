@@ -1,35 +1,34 @@
 /*
  * @Author: your name
  * @Date: 2020-08-13 13:49:16
- * @LastEditTime: 2020-08-22 16:30:29
+ * @LastEditTime: 2020-09-05 20:57:28
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \笔试本地测试\Node.js\test.js
  */
 
-let readline = require("readline")
+let readline = require("readline");
 const rl = readline.createInterface({
-    input: process.stdin,
-    output: process.stdout,
-})
+  input: process.stdin,
+  output: process.stdout,
+});
 
 rl.on("line", function (line) {
-    let [n, m, k] = line.split(" ");
-    n = +n, m = +m, k = +k;
-    let res = []
-    for (let i = 1; i <= n; i++) {
-        for (let j = 1; j <= m; j++) {
-            res.push(i * j)
-        }
+  let [n, m, k] = line.split(" ");
+  (n = +n), (m = +m), (k = +k);
+  let res = [];
+  for (let i = 1; i <= n; i++) {
+    for (let j = 1; j <= m; j++) {
+      res.push(i * j);
     }
-    res.sort((a, b) => b - a)
-    console.log(res[k-1])
-})
+  }
+  res.sort((a, b) => b - a);
+  console.log(res[k - 1]);
+});
 
-rl.on('SIGINT', () => {
-    rl.close()
-  })
-  
+rl.on("SIGINT", () => {
+  rl.close();
+});
 
 // 第一行是行数的题
 // let readline = require("readline")
@@ -61,7 +60,6 @@ rl.on('SIGINT', () => {
 //         return 1 + cal(Math.floor(n / 2))
 //     }
 // }
-
 
 // 1. 处理单行输入
 // let readline = require("readline");
