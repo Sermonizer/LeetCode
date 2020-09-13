@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2020-08-13 13:49:16
- * @LastEditTime: 2020-09-05 20:57:28
+ * @LastEditTime: 2020-09-12 14:42:22
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \笔试本地测试\Node.js\test.js
@@ -30,37 +30,6 @@ rl.on("SIGINT", () => {
   rl.close();
 });
 
-// 第一行是行数的题
-// let readline = require("readline")
-// const rl = readline.createInterface({
-// 	input: process.stdin,
-// 	output: process.stdout
-// })
-
-// var k = -1, nums = []
-// rl.on("line", function(line) {
-//     // k代表输入行数
-//     if (k < 0) {
-//         k = parseInt(line.trim())
-//     } else {
-//         // 用数组保存
-//         nums.push(parseInt(line.trim()))
-//         if (k == nums.length) {
-//             for (let i = 0; i < k; i++) {
-//                 console.log(cal(nums[i]))
-//             }
-//         }
-//     }
-// })
-
-// function cal(n) {
-//     if (n <= 2) {
-//         return n
-//     } else {
-//         return 1 + cal(Math.floor(n / 2))
-//     }
-// }
-
 // 1. 处理单行输入
 // let readline = require("readline");
 // const rl = readline.createInterface({
@@ -74,7 +43,7 @@ rl.on("SIGINT", () => {
 //   console.log(a1 + a2);
 // });
 
-// 2. 多行输入
+// 2. 固定行数输入
 // let readline = require("readline");
 // const rl = readline.createInterface({
 //   input: process.stdin,
@@ -88,4 +57,79 @@ rl.on("SIGINT", () => {
 //     const a2 = num[1].split(" ");
 //     console.log(parseInt(a1[0]) + parseInt(a2[0]));
 //   }
+// });
+
+// 3. 第一行是行数
+// let readline = require("readline");
+// const rl = readline.createInterface({
+//   input: process.stdin,
+//   output: process.stdout,
+// });
+// let input = [],
+//   t;
+// rl.on("line", function (line) {
+//   if (line.length == 1) {
+//     t = parseInt(line);
+//   } else {
+//     input.push(line.split(" "));
+//   }
+//   if (input.length == t) {
+//     for (let i = 0; i < t; i++) {
+//       console.log(parseInt(input[i][0]) + parseInt(input[i][1]));
+//     }
+//   }
+// });
+
+// 4. 不定行数输入
+// let readline = require("readline")
+// const rl = readline.createInterface({
+//     input: process.stdin,
+//     output: process.stdout
+// })
+// rl.on("line", function(line){
+//     let temp = line.split(' ')
+//     console.log(parseInt(temp[0]) + parseInt(temp[1]))
+// })
+
+// 5. 不定行数 指定输入结束
+// let readline = require("readline");
+// const rl = readline.createInterface({
+//   input: process.stdin,
+//   output: process.stdout,
+// });
+// let input = []
+// rl.on("line", function(line) {
+//     let temp = line.split(' ')
+//     let a1 = parseInt(temp[0])
+//     let a2 = parseInt(temp[1])
+//     if (a1 == 0 && a2 == 0) {
+//       for (let i = 0; i < input.length; i++) {
+//         console.log(input[i][0] + input[i][1])
+//       }
+//       process.exit()
+//     } else {
+//       input.push([a1, a2])
+//     }
+// })
+
+// 6. 不定行数 每行第一个为该行个数
+// let readline = require("readline");
+// const rl = readline.createInterface({
+//   input: process.stdin,
+//   output: process.stdout,
+// });
+// let input = [];
+// rl.on("line", function (line) {
+//   let temp = line.split(" ");
+//   if (parseInt(temp[0]) == 0) {
+//     for (let i = 0; i < input.length; i++) {
+//       let res = 0;
+//       for (let j = 1; j <= parseInt(input[i][0]); j++) {
+//         res += parseInt(input[i][j]);
+//       }
+//       console.log(res);
+//     }
+//     process.exit();
+//   }
+//   input.push(temp);
 // });
