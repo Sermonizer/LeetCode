@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2020-06-11 09:24:37
- * @LastEditTime: 2020-06-11 09:41:25
+ * @LastEditTime: 2020-09-17 16:12:38
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \XiechengH5\test.js
@@ -37,3 +37,19 @@ function cutRope2(n) {
 
 let num = cutRope2(7);
 console.log(num);
+
+function cutRope3(number)
+{
+    // write code here
+    if (number == 2) return 1
+    if (number == 3) return 2
+    if (number % 3 == 1) {
+        return Math.pow(3, Math.floor(number / 3) - 1) * 4
+    } else if (number % 3 == 2) {
+        return Math.pow(3, Math.floor(number / 3)) * 2
+    } else {
+        return Math.pow(3, Math.floor(number / 3))
+    }
+}
+
+console.log(cutRope3(8));
