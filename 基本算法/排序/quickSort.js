@@ -1,9 +1,10 @@
 /*
  * @Author: your name
  * @Date: 2020-07-09 15:59:33
- * @LastEditTime: 2020-09-02 17:54:31
+ * @LastEditTime: 2020-09-20 16:24:16
  * @LastEditors: Please set LastEditors
- * @Description: In User Settings Edit
+ * @Description: 快速排序使用分治法（Divide and conquer）策略来把一个序列（list）分为较小和较大的2个子序列，
+ *               然后递归地排序两个子序列。
  * @FilePath: \Algorithm\排序\quickSort.js
  */
 

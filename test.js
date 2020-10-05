@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2020-08-22 11:32:17
- * @LastEditTime: 2020-08-28 20:50:02
+ * @LastEditTime: 2020-09-20 20:43:54
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \test.js
@@ -73,4 +73,4 @@ function getSum(root, sum) {
  console.log(likeNum(3));
  console.log('%s', "value")
 
- 
+ console.log(parseInt("abc"));
